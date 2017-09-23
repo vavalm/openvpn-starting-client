@@ -23,9 +23,9 @@ then
 	echo "Nombre entré incorrect"
 
 else
+	echo "Starting openvpn..."
 	x="${choice[$i]}"
-	echo "Updating files database..."
-	sudo updatedb #Updating database for locate function
-	y=`locate $x`
-	sudo openvpn $y 
+	y=`find $path -name $x`
+	echo "y=$y"
+	sudo openvpn $y
 fi
